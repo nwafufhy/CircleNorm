@@ -231,7 +231,7 @@ def main():
                         st.subheader("✅ 处理结果")
                       
                         # 显示检测结果
-                        st.write("**圆形检测结果:**")
+                        # st.write("**圆形检测结果:**")
                         detected_rgb = cv2.cvtColor(result['detected'], cv2.COLOR_BGR2RGB)
                         st.image(detected_rgb, use_container_width=True)  # Updated from use_column_width
                         st.success(f"检测到圆形，半径: {result['radius']} 像素")
