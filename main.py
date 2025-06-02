@@ -218,7 +218,7 @@ def main():
             with col1:
                 st.subheader("📋 原始图像")
                 image = Image.open(uploaded_file)
-                st.image(image, use_column_width=True)
+                st.image(image, use_container_width=True)  # Updated from use_column_width
                 st.info(f"图像尺寸: {image.size[0]} × {image.size[1]}")
           
             # 处理按钮
@@ -233,7 +233,7 @@ def main():
                         # 显示检测结果
                         st.write("**圆形检测结果:**")
                         detected_rgb = cv2.cvtColor(result['detected'], cv2.COLOR_BGR2RGB)
-                        st.image(detected_rgb, use_column_width=True)
+                        st.image(detected_rgb, use_column_width=True)  # Updated from use_column_width
                         st.success(f"检测到圆形，半径: {result['radius']} 像素")
                   
                     # 显示处理步骤
@@ -244,17 +244,17 @@ def main():
                     with step_col1:
                         st.write("**1️⃣ 圆形检测**")
                         detected_rgb = cv2.cvtColor(result['detected'], cv2.COLOR_BGR2RGB)
-                        st.image(detected_rgb, use_column_width=True)
+                        st.image(detected_rgb, use_container_width=True)  # Updated from use_column_width
                   
                     with step_col2:
                         st.write("**2️⃣ 圆形裁剪**")
                         cropped_rgb = cv2.cvtColor(result['cropped'], cv2.COLOR_BGR2RGB)
-                        st.image(cropped_rgb, use_column_width=True)
+                        st.image(cropped_rgb, use_container_width=True)  # Updated from use_column_width
                   
                     with step_col3:
                         st.write("**3️⃣ 尺寸标准化**")
                         normalized_rgb = cv2.cvtColor(result['normalized'], cv2.COLOR_BGR2RGB)
-                        st.image(normalized_rgb, use_column_width=True)
+                        st.image(normalized_rgb, use_container_width=True)  # Updated from use_column_width
                   
                     # 下载按钮
                     st.subheader("💾 下载结果")
@@ -355,7 +355,7 @@ def main():
                             with cols[preview_index]:
                                 st.write(f"**{name}**")
                                 normalized_rgb = cv2.cvtColor(result['normalized'], cv2.COLOR_BGR2RGB)
-                                st.image(normalized_rgb, use_column_width=True)
+                                st.image(normalized_rgb, use_container_width=True)  # Updated from use_column_width
                                 st.caption(f"半径: {result['radius']}px")
                             preview_index += 1
                     
